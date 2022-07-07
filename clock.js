@@ -8,7 +8,14 @@ const clock = () => {
 
 const HoursAndMinutes = () => {
     let allDates = new Date
-    timer.innerHTML = `${allDates.getHours()}:${allDates.getMinutes()}`
+    let Hours = allDates.getHours()
+    let Minutes = allDates.getMinutes()
+    if(Hours < 10){
+        Hours = `0${Hours}`
+    } else if(Minutes < 10){
+        Minutes = `0${Minutes}`
+    }
+    timer.innerHTML = `${Hours}:${Minutes}`
 }
 
 const rotateSegsPointer = () => {
